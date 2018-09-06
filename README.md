@@ -1,0 +1,1 @@
+# CSRF_Prevention--Synchronizer_Token_Pattern
