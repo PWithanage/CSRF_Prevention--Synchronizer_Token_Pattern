@@ -24,15 +24,10 @@
                 ?>
             </ul>
         </nav>
-        <div class="container">
-            <div class="row" align="center" style="padding-top: 100px;">
-                <div class="col-12">           
-                    <div class="card">
-                        <h5 class="card-header">Updated Successfully</h5>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
+        <div class="col-md-5 mx-auto order-12">
+				<div class="card my-5 p-3 shadow">
+					<div class="card-body" align="center">
+						<h5 class="card-title text-center">Updated Successfully</h5>
             						<?php
                                         
                 						if(isset($_COOKIE['session_cookie']))
@@ -48,27 +43,21 @@
                 								$postal_code=$_POST['postalCode'];
 
                 								echo "<div class='alert alert-primary' role='alert'>".$streetAddress."</div>";
-                								echo "<div class='alert alert-secondary' role='alert'>".$city."</div>";
-                								echo "<div class='alert alert-success' role='alert'>".$province."</div>";
-                								echo "<div class='alert alert-info' role='alert'>".$postal_code."</div>";		
+                								echo "<div class='alert alert-primary' role='alert'>".$city."</div>";
+                								echo "<div class='alert alert-primary' role='alert'>".$province."</div>";
+                								echo "<div class='alert alert-primary' role='alert'>".$postal_code."</div>";
+												echo "<div class='alert alert-info' role='alert'>Address updated successfully. CSRF Token submitted through the
+													form and the CSRF token which was stored in server side are equal. Therefore this is a legitimate user request.</div>";
                 							}
                 							else
-                							{
-                                                
+                							{                                                
                 								echo "<script>alert('ERROR!!!')</script>";
                 							}
                 						}
             						?>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <script src="./public/js/bootstrap.min.js"></script>
-        <script src="./public/js/popper.min.js"></script>
+			</div>
+		</div>
+	 </div>
+
     </body>
 </html>

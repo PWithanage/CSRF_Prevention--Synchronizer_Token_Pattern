@@ -9,6 +9,9 @@
         
         <link rel="stylesheet"  href="./public/css/bootstrap.min.css">        
         <script src="./public/js/jquery-3.3.1.min.js"></script>
+		
+		<!--<?php include (realpath(__DIR__)."/public/header.php") ?>
+		-->
 		<style>
 		.footer {
 		   position: fixed;
@@ -34,15 +37,11 @@
                 ?>
             </ul>
         </nav>
-        <div class="container">
-            <div class="row" align="center" style="padding-top: 100px;">
-                <div class="col-12">
-                    <div class="card">
-                        <h5 class="card-header">Update Your Address</h5>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-8">
+		<div class="col-md-6 mx-auto order-12">
+			<div class="card my-5 p-3 shadow">
+				<div class="card-body">
+					<h5 class="card-title text-center">Update your Address</h5>
+						
                                     <?php 
                                         
                                         if(isset($_COOKIE['session_cookie'])) 
@@ -50,41 +49,41 @@
                                             //Update Address Form submission
 											//Here the CSRF token received from the server will be added to a hidden field
                                             echo "
-                    						<form action='result.php' method='POST' enctype='multipart/form-data'>
+                    						<form class='mt-5 mb-3' action='result.php' method='POST' enctype='multipart/form-data'>
 											
                                                 <!-- CSRF Token will be added to this hidden field-->
                                                     <input type='hidden' name='csrf_token' id='csrf_token' value=''>   
                                                 <!--  -->
 												
                                                 <div class='form-group row'>
-                                                	<label for='streetAddress' class='col-sm-2 col-form-label'>Street Address</label>
-                                                <div class='col-sm-10'>
+                                                	<label for='streetAddress' class='col-sm-3 col-form-label'>Street Address</label>
+                                                <div class='col-sm-9'>
                                                     <input type='text' class='form-control' id='streetAddress' name='streetAddress' placeholder='Street Address' required>
                                                 </div>
                                                 </div>
                                               
 												<div class='form-group row'>
-                                                	<label for='city' class='col-sm-2 col-form-label'>City</label>
-                                                <div class='col-sm-10'>
+                                                	<label for='city' class='col-sm-3 col-form-label'>City</label>
+                                                <div class='col-sm-9'>
                                                     <input type='text' class='form-control' id='city' name='city' placeholder='City' required>
                                                 </div>
                                                 </div>
 												
 												<div class='form-group row'>
-                                                	<label for='province' class='col-sm-2 col-form-label'>Province</label>
-                                                <div class='col-sm-10'>
+                                                	<label for='province' class='col-sm-3 col-form-label'>Province</label>
+                                                <div class='col-sm-9'>
                                                     <input type='text' class='form-control' id='province' name='province' placeholder='Province' required>
                                                 </div>
                                                 </div>
 												
 												<div class='form-group row'>
-                                                	<label for='postalCode' class='col-sm-2 col-form-label'>Postal Code</label>
-                                                <div class='col-sm-10'>
+                                                	<label for='postalCode' class='col-sm-3 col-form-label'>Postal Code</label>
+                                                <div class='col-sm-9'>
                                                     <input type='text' class='form-control' id='postalCode' name='postalCode' placeholder='Postal Code' required>
                                                 </div>
                                                 </div>
 												
-                                                <button type='submit' class='btn btn-danger' id='submit' name='submit'>Update</button>
+                                                <button type='submit' class='btn btn-primary btn-block mt-5' id='submit' name='submit'>Update</button>
 											</form>";
                                         }
                                     ?>
@@ -104,21 +103,15 @@
 
             						})
             						</script>
-                                </div>
-                                <div class="col-sm-2"></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-        </div>
+									
+			</div>
+		</div>
+	</div>
+									
+		
         <div class="footer">
 		<p>Cross Site Request Forgery Protection - Synchronizer Token Pattern  |  IT15010636</p>
 		</div>
-        <script src="./public/js/bootstrap.min.js"></script>
-        <script src="./public/js/popper.min.js"></script>
-    </body>
+
+	</body>
 </html>

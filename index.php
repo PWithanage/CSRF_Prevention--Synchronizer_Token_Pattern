@@ -9,6 +9,7 @@
 
     <link rel="stylesheet"  href="./public/css/bootstrap.min.css">
     <script src="./public/js/jquery-3.3.1.min.js"></script>
+
 	<style>
 		.footer {
 		   position: fixed;
@@ -20,48 +21,38 @@
 		   text-align: center;
 		}
 	</style>
+	
   </head>
+  
   <body>
        <nav class="navbar navbar-light bg-light">
             <a class='nav-link active' href='index.php'>Online Shopping</a>
         </nav>
-    <div class="container">
-      <div class="row" align="center" style="padding-top: 100px;">
-        <div class="col-12">
-          <div class="card">
-            <h5 class="card-header">Login</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                  <form action='index.php' method='POST' enctype='multipart/form-data'>       
-                    <div class="form-group row">
-                      <label for="Email" class="col-sm-2 col-form-label">Username</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="password" class="col-sm-2 col-form-label">Password</label>
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="submit" name="submit">Login</button>
-                  </form>
-                </div>
-                <div class="col-sm-2"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+			<div class="col-md-4 mx-auto order-12">
+				<div class="card my-5 p-3 shadow">
+					<div class="card-body">
+						<h5 class="card-title text-center">Sign In</h5>
+
+						<!-- Sign in Form -->
+						<form class="mt-5 mb-3" action="index.php" method="POST">
+							<div class="form-group">
+								<label for="username">Username</label>
+								<input type="text" class="form-control" id="username" name="username" value="admin" required autofocus/>
+							</div>
+							<div class="form-group">
+								<label for="password">Password</label>
+								<input type="password" class="form-control" id="password" name="password" value="admin" required/>
+							</div>
+							<button type="submit" class="btn btn-primary btn-block mt-5" id="submit" name="submit">Login</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			
 	<div class="footer">
 		<p>Cross Site Request Forgery Protection - Synchronizer Token Pattern  |  IT15010636</p>
 	</div>
-    <script src="./public/js/bootstrap.min.js"></script>
-    <script src="./public/js/popper.min.js"></script>
+
   </body>
 </html>
 
