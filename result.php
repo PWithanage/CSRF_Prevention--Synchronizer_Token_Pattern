@@ -26,10 +26,8 @@
         </nav>
         <div class="col-md-5 mx-auto order-12">
 				<div class="card my-5 p-3 shadow">
-					<div class="card-body" align="center">
-						<h5 class="card-title text-center">Updated Successfully</h5>
-            						<?php
-                                        
+					<div class="card-body" align="center">					
+            						<?php                                       
                 						if(isset($_COOKIE['session_cookie']))
                 						{
                 							session_start();
@@ -41,23 +39,23 @@
                 								$city=$_POST['city'];
                 								$province=$_POST['province'];
                 								$postal_code=$_POST['postalCode'];
-
+												
+												echo "<h5 class='card-title text-center'>Updated Successfully</h5>";
                 								echo "<div class='alert alert-primary' role='alert'>".$streetAddress."</div>";
                 								echo "<div class='alert alert-primary' role='alert'>".$city."</div>";
                 								echo "<div class='alert alert-primary' role='alert'>".$province."</div>";
                 								echo "<div class='alert alert-primary' role='alert'>".$postal_code."</div>";
-												echo "<div class='alert alert-info' role='alert'>Address updated successfully. CSRF Token submitted through the
+												echo "<div class='alert alert-info' role='alert'>Address is updated successfully. CSRF Token submitted through the
 													form and the CSRF token which was stored in server side are equal. Therefore this is a legitimate user request.</div>";
                 							}
                 							else
                 							{                                                
-                								echo "<script>alert('ERROR!!!')</script>";
+                								echo "<div class='alert alert-secondary' role='alert'>ERROR Updating Address !!!</div>";
                 							}
                 						}
             						?>
+					</div>
+				</div>
 			</div>
-		</div>
-	 </div>
-
     </body>
 </html>

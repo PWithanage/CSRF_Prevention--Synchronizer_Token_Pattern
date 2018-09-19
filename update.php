@@ -9,9 +9,7 @@
         
         <link rel="stylesheet"  href="./public/css/bootstrap.min.css">        
         <script src="./public/js/jquery-3.3.1.min.js"></script>
-		
-		<!--<?php include (realpath(__DIR__)."/public/header.php") ?>
-		-->
+
 		<style>
 		.footer {
 		   position: fixed;
@@ -53,8 +51,7 @@
 											
                                                 <!-- CSRF Token will be added to this hidden field-->
                                                     <input type='hidden' name='csrf_token' id='csrf_token' value=''>   
-                                                <!--  -->
-												
+                                                											
                                                 <div class='form-group row'>
                                                 	<label for='streetAddress' class='col-sm-3 col-form-label'>Street Address</label>
                                                 <div class='col-sm-9'>
@@ -104,13 +101,12 @@
             						})
             						</script>
 									
+				</div>
 			</div>
-		</div>
-	</div>
-									
+		</div>								
 		
         <div class="footer">
-		<p>Cross Site Request Forgery Protection - Synchronizer Token Pattern  |  IT15010636</p>
+			<p>Cross Site Request Forgery Protection - Synchronizer Token Pattern  |  IT15010636</p>
 		</div>
 
 	</body>

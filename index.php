@@ -2,8 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Synchronizer Token Pattern</title>
 
@@ -33,7 +31,7 @@
 					<div class="card-body">
 						<h5 class="card-title text-center">Sign In</h5>
 
-						<!-- Sign in Form -->
+						<!-- Sign in Form - Here I have used hardcoded credentials as username=admin & password=admin -->
 						<form class="mt-5 mb-3" action="index.php" method="POST">
 							<div class="form-group">
 								<label for="username">Username</label>
@@ -49,35 +47,34 @@
 				</div>
 			</div>
 			
-	<div class="footer">
-		<p>Cross Site Request Forgery Protection - Synchronizer Token Pattern  |  IT15010636</p>
-	</div>
+		<div class="footer">
+			<p>Cross Site Request Forgery Protection - Synchronizer Token Pattern  |  IT15010636</p>
+		</div>
 
   </body>
 </html>
 
-<!--After User clicks login button-->
+<!--After User clicks login button credeintials will be submitted through a POST request.-->
 <?php
 	
   if(isset($_POST['submit']))
   {
     //Invoke login function
-		login();
-	}
+	login();
+  }
 
+	//Login function validates the user input credentials
 	function login()
 	{
-    //Here hardcoded credentials are used
 		$username='admin';
 		$password='admin';
 
 		$input_username = $_POST['username'];
 		$input_pwd = $_POST['password'];
 		
-    //check whether user input credentials match with the hardcoded credentials
 		if(($input_username == $username)&&($input_pwd == $password))
 		{
-      //After the user validation, session is started
+			//After the user validation, session is started
 			session_set_cookie_params(300);
 			session_start();
 			session_regenerate_id();
@@ -86,11 +83,11 @@
 			setcookie('session_cookie', session_id(), time() + 300, '/');
 
 			//Create the CSRF token for the session and store in the memory
-			$_SESSION['CSRF_Token'] = generate_token();
+			$_SESSION['CSRF_Token'] = generateToken();
 
 			//User is redirected to the update address page
 			header("Location:update.php");
-   		exit;
+			exit;
 		}
 		else
 		{
@@ -99,9 +96,9 @@
 		}
 	}
 	
-  //Generate CSRF token
-  function generate_token()
-	{
-	  return sha1(base64_encode(openssl_random_pseudo_bytes(30)));
-	}
+  //Generate CSRF token in server side
+  function generateToken()
+  {
+	 return sha1(base64_encode(openssl_random_pseudo_bytes(30)));
+  }
 ?>
